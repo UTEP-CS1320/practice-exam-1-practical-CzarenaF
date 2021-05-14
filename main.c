@@ -22,17 +22,17 @@ int main(void) {
      ***************************/
     
     // TODO: Fix the code below.
-    printf("Enter 2 numbers:\n");
+    //printf("Enter 2 numbers:\n");
     int x, y;
     scanf("%d %d", &x, &y);
 
-    int x_digit = x / 10;
-    int y_digit = y / 10;
+    int x_digit = x % 10; //chnaged from / -> %
+    int y_digit = y % 10; //chnaged from / -> %
 
     if(x_digit == y_digit) {
       printf ("TRUE");
     } 
-    else {
+    else { //completed else statement
       printf ("FALSE");
     }
     
@@ -42,28 +42,28 @@ int main(void) {
     /***************************
      *  Problem 2: Lotto
      ***************************/
-    printf ("Enter ticket number:\n");
+    //printf ("Enter ticket number:\n");
     //char winner[5] = "1234";
-    char winner[5] = "7239";
+    char winner[5] = "7239"; 
     char ticket[5];
 
-    scanf ("%s", ticket);
+    scanf ("%s", ticket); //reads ticket number order
 
     // TODO: Your P2 code goes here
-    int numberOrder;
-    for (int i = 0; i < 5; ++i) {
-      if (winner[i] == ticket[i]){
+    int numberOrder; //variable to store ticket number order
+    for (int i = 0; i < 5; ++i) { //checking matching numbers
+      if (winner[i] == ticket[i]) { // if winner and ticker are matching
         numberOrder++;
       }
     }
 
-    if(numberOrder == 5){
+    if(numberOrder == 5) { // If 5 all match
       printf ("1st Prize!\n");
-    } else if (numberOrder == 4){
+    } else if (numberOrder == 4) { // If 4 only 3 numbers match
       printf ("2nd Prize!\n");
-    } else if (numberOrder == 3) {
+    } else if (numberOrder == 3) { // If 3 only 2 numbers match
       printf ("3rd Prize!\n");
-    } else {
+    } else { //Anything less than 3 is not a winner
       printf ("No Prize! Better luck next time!\n");
     }
     
