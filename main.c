@@ -22,6 +22,7 @@ int main(void) {
      ***************************/
     
     // TODO: Fix the code below.
+    printf("Enter 2 numbers:\n");
     int x, y;
     scanf("%d %d", &x, &y);
 
@@ -29,10 +30,11 @@ int main(void) {
     int y_digit = y / 10;
 
     if(x_digit == y_digit) {
-      print("TRUE");
+      printf ("TRUE");
+    } 
+    else {
+      printf ("FALSE");
     }
-
-    print("FALSE");
     
     /* Problem 1 End */
   } else if(opt == 2) {
@@ -40,12 +42,30 @@ int main(void) {
     /***************************
      *  Problem 2: Lotto
      ***************************/
+    printf ("Enter ticket number:\n");
+    //char winner[5] = "1234";
     char winner[5] = "7239";
     char ticket[5];
 
-    scanf("%s", ticket);
-    
+    scanf ("%s", ticket);
+
     // TODO: Your P2 code goes here
+    int numberOrder;
+    for (int i = 0; i < 5; ++i) {
+      if (winner[i] == ticket[i]){
+        numberOrder++;
+      }
+    }
+
+    if(numberOrder == 5){
+      printf ("1st Prize!\n");
+    } else if (numberOrder == 4){
+      printf ("2nd Prize!\n");
+    } else if (numberOrder == 3) {
+      printf ("3rd Prize!\n");
+    } else {
+      printf ("No Prize! Better luck next time!\n");
+    }
     
     /* Problem 2 End */
   } else if(opt == 3) {
